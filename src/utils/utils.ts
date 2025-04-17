@@ -9,7 +9,7 @@ export function isValidImageUrl(url: string): boolean {
   try {
     const parsedUrl = new URL(url);
     return parsedUrl.pathname.toLowerCase().endsWith('.jpg');
-  } catch (e) {
+  } catch (_) {
     return false;
   }
 }
@@ -38,7 +38,7 @@ export function validateMeme(meme: Partial<Meme>): MemeValidationErrors | null {
       if (!url.pathname.toLowerCase().endsWith('.jpg')) {
         errors.imageUrl = "The URL should lead to an image in JPG format";
       }
-    } catch (e) {
+    } catch (_) {
       errors.imageUrl = "Invalid URL";
     }
   }
@@ -56,7 +56,7 @@ export function validateMeme(meme: Partial<Meme>): MemeValidationErrors | null {
   if (meme.link) {
     try {
       new URL(meme.link);
-    } catch (e) {
+    } catch (_) {
       errors.link = "Invalid link";
     }
   }

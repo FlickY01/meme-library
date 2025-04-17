@@ -56,7 +56,7 @@ export default function ListPage() {
         </div>
       ) : (
         <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-          <p className="text-gray-600">No memes yet. They'll be here soon!</p>
+          <p className="text-gray-600">No memes yet. They will be here soon!</p>
         </div>
       )}
       

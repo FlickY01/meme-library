@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Button } from '@heroui/react';
+import Image from 'next/image';
 import { Meme } from '../types/meme';
 
 interface MemeCardProps {
@@ -16,9 +17,11 @@ const MemeCard: React.FC<MemeCardProps> = ({ meme, onEdit }) => {
   return (
     <Card className="h-full flex flex-col overflow-hidden shadow-md">
       <div className="relative pt-[56.25%]">
-        <img
+        <Image
           src={meme.imageUrl}
           alt={meme.title}
+          fill
+          sizes="(max-width: 768px) 100vw, 33vw"
           className="absolute inset-0 w-full h-full object-cover"
         />
       </div>
